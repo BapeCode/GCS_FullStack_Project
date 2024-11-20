@@ -1,17 +1,15 @@
-let lastScrollY = 0; // Position précédente du scroll
+// Sélectionner tous les liens avec href commençant par "#"
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault(); // Empêche le comportement par défaut
 
-window.addEventListener("scroll", function () {
-  const header = document.querySelector(".home");
+        // Cibler la section liée
+        const target = document.querySelector(this.getAttribute("href"));
 
-  if (window.scrollY > lastScrollY) {
-    // Scroll vers le bas
-    header.classList.remove("scrolled-up");
-    header.classList.add("scrolled-down");
-  } else {
-    // Scroll vers le haut
-    header.classList.remove("scrolled-down");
-    header.classList.add("scrolled-up");
-  }
-
-  lastScrollY = window.scrollY; // Mise à jour de la position
+        // Faire défiler jusqu'à la section avec animation
+        target.scrollIntoView({
+            behavior: "smooth", // Animation fluide
+            block: "start"      // Aligne le haut de la section au haut de la fenêtre
+        });
+    });
 });
