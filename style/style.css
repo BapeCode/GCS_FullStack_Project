@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-@font-face {
-    font-family: "San Francisco";
-    font-weight: 400;
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-}
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+
 
 :root {
-    --text: #F6F6F6;
-    --background: #f4f1ec;
-    --secondary: #1F2937;
-    --primary: #111827;
+    --text: #ffff;
+    --background: #f5f5f7;
+    --button: #0071e3;
+    --button-hovered: #0679eb;
+    --box: #eae8ed;
     --radius: 10px;
     --selected: rgb(0, 118, 202)
 }
@@ -20,33 +19,23 @@
     padding: 0;
 }
 
-a {
-    font-size: 17px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-a:hover {
-    cursor: pointer;
-    color: var(--selected);
-}
-
 body {
     background: var(--text);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: "San Francisco", sans-serif;
-/*linear-gradient(to right, #0090f7, #ba62fc, #f2416b)*/
+    font-family: "SF Pro Display", sans-serif;
+    animation: 3s websiteopen;
+    /*linear-gradient(to right, #0090f7, #ba62fc, #f2416b)*/
 
     .header {
         display: flex;
         justify-content: space-around;
         align-items: center;
         width: 100%;
-        /*background: var(--secondary);*/
         padding: 10px;
+        margin: 0px 8px;
         -webkit-box-shadow: 0 5px 15px 0 var(--secondary);
         box-shadow: 0 5px 15px 0 var(--secondary);
 
@@ -70,24 +59,59 @@ body {
                 justify-content: center;
                 align-items: center;
                 flex-direction: row;
-
                 margin: 8px;
                 border: none;
                 color: var(--primary);
                 background: none;
                 transition: all ease-in 0.2ms;
+            }
 
-                i {
-                    margin: 10px;
-                }
+            a {
+                font-size: 17px;
+                text-decoration: none;
+                font-weight: 0;
+                font-family: "SF Pro Display", sans-serif;
+            }
+            
+            a:hover {
+                cursor: pointer;
+                color: var(--selected);
             }
 
             .selected {
                 color: var(--selected);
+                font-weight: 500;
 
             }
 
             .nav-button:hover {
+                cursor: pointer;
+                color: var(--selected);
+            }
+        }
+
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 12px;
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                color: var(--primary);
+                transition: all ease-in 0.1s;
+            }
+            
+            i {
+                font-size: 25px;
+            }
+
+            a:hover {
                 cursor: pointer;
                 color: var(--selected);
             }
@@ -103,77 +127,135 @@ body {
         height: 50rem;
         background: var(--background);
         gap: 15px ;
-
-        .home-right {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            border: 1px solid black;
-        }
-
-        .home-left {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            width: 100%;
-            border: 1px solid black;
-        }
-
-        h1 {
-            font-size: 70px;
-            font-family: "San Francisco", sans-serif;
-            font-weight: 0;
-        }
-
-        p {
-            font-family: "San Francisco", sans-serif;
-            font-size: 15px;
-        }
-
+    
         button {
             padding: 12px 24px;
             margin: 8px;
             border: none;
             border-radius: 50px;
-            background: #0090f7;
+            background: var(--button);
             color: var(--text);
             transition: background-color ease-in 0.5ms;
         }
-
+        
         button:hover {
             cursor: pointer;
             background: #0076ca;
+            color: var(--text);
         }
+    
+        .home-right, .home-left {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            padding: 24px;
+            margin: 12px;
+    
+            h6 {
+                font-size: 56px;
+                font-family: "SF Pro Display", sans-serif;
+                font-weight: 0;
+                text-align: center;
+                line-height: 1.05;
+                background-image: linear-gradient(to left, #0090f7, #ba62fc, #f2416b);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+    
+            p {
+                font-family: "SF Pro Display", sans-serif;
+                font-size: 25px;
+                text-align: center;
+            }
+        }
+  
+        
     }
 
     .about {
         display: flex;
-        justify-content: flex-end;
         align-items: center;
-        flex-direction: row;
+        justify-content: center;
+        flex-direction: column;
         width: 100%;
-        margin: 50px;
+        margin: 12px;
+        gap: 12px;
 
-        span {
-            font-size: 50px;
-            color: var(--text);
-            font-family: "San Francisco", sans-serif;
+        .about-title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin-bottom: 25px;
+
+            .about-title {
+                background-image: linear-gradient(to left, #0090f7, #ba62fc, #f2416b);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            h1 {
+                font-size: 45px;
+                font-family: "SF Pro Display", sans-serif;
+                font-weight: 0;
+                text-align: center;
+                line-height: 1.05;
+                color: #ccc;
+            }
         }
 
-        .content {
+        .about-container {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            width: 50%;
-            height: 15rem;
-            padding: 10px;
-            margin: 10px;
-            border-radius: 10px;
-            background: #e3e3e3;
+            justify-content: center;
+            width: 100%;
+
+            .container-items {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-direction: column;
+                padding: 12px;
+                margin: 12px;
+                width: 480px;
+                height: 500px;
+                background: linear-gradient(to top, #ffff, #f2f2f2);
+                border-radius: 10px;
+                -webkit-box-shadow: 0px 0px 15px 10px #ccc; 
+                box-shadow: 0px 0px 15px 10px #ccc;
+    
+                p {
+                    text-align: center;
+                    font: 12px;
+                }
+
+                h1 {
+                    font-weight: 200;
+                    font-size: 40px;
+                }
+
+                .title {
+                    background-image: linear-gradient(to right, #000000, #191919, #333333);
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                .subtitle {
+                    color: #ccc;
+                    text-align: center;
+                }
+            }
         }
     }
 }
 
+@keyframes websiteopen {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
