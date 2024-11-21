@@ -1,195 +1,142 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-@font-face {
-    font-family: "San Francisco";
-    font-weight: 400;
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-}
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
 
 :root {
     --text: #ffff;
     --background: #f5f5f7;
-    --secondary: #1F2937;
-    --primary: #111827;
+    --button: #0071e3;
+    --button-hovered: #0679eb;
+    --subtitle: #6e6e73;
     --radius: 10px;
-    --selected: rgb(0, 118, 202)
+    --selected: rgb(0, 118, 202);
 }
 
 * {
     margin: 0;
     padding: 0;
-}
-
-a {
-    font-size: 17px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-a:hover {
-    cursor: pointer;
-    color: var(--selected);
+    box-sizing: border-box;
 }
 
 body {
     background: var(--text);
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    font-family: "San Francisco", sans-serif;
-/*linear-gradient(to right, #0090f7, #ba62fc, #f2416b)*/
-
-    .header {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
-        /*background: var(--secondary);*/
-        padding: 10px;
-        -webkit-box-shadow: 0 5px 15px 0 var(--secondary);
-        box-shadow: 0 5px 15px 0 var(--secondary);
-
-        h1 {
-            background-image: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            flex-direction: row;
-            height: 100%;
-            border-radius: 10px;
-
-
-            .nav-button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: row;
-
-                margin: 8px;
-                border: none;
-                color: var(--primary);
-                background: none;
-                transition: all ease-in 0.2ms;
-
-                i {
-                    margin: 10px;
-                }
-            }
-
-            .selected {
-                color: var(--selected);
-
-            }
-
-            .nav-button:hover {
-                cursor: pointer;
-                color: var(--selected);
-            }
-        }
-    }
-
-    .photo {
-        display :flex ;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-        width: 100%;
-        height: 50rem;
-        background: var(--background);
-        gap: 15px ;
-        
-
-        .photo-droite {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            width: 40%;
-            
-        }
-
-        .photo-gauche {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            width: 40%;
-            
-        }
-
-        h1 {
-            font-size: 40px;
-            font-family: "San Francisco", sans-serif;
-            font-weight: 0;
-        }
-
-        p {
-            font-family: "San Francisco", sans-serif;
-            font-size: 20px;
-        }
-
-        button {
-            padding: 12px 24px;
-            margin: 8px;
-            border: none;
-            border-radius: 50px;
-            background: #0090f7;
-            color: var(--text);
-            transition: background-color ease-in 0.5ms;
-        }
-
-        button:hover {
-            cursor: pointer;
-            background: #0076ca;
-        }
-    }
-
-    .about {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        flex-direction: row;
-        width: 100%;
-        margin: 50px;
-
-        span {
-            font-size: 50px;
-            color: var(--text);
-            font-family: "San Francisco", sans-serif;
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 50%;
-            height: 15rem;
-            padding: 10px;
-            margin: 10px;
-            border-radius: 10px;
-            background: #e3e3e3;
-        }
-    }
+    font-family: "SF Pro Display", sans-serif;
+    user-select: none;
+    animation: fadeIn 3s;
 }
 
-.h1{
-    font-size: 70px;
-    font-family: "San Francisco", sans-serif;
-    font-weight: 0;
+/* Header Style */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    width: 100%;
+    background: var(--background);
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 36px;
+    background-image: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+.nav-button {
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--subtitle);
+    transition: color 0.3s ease;
+}
+
+.nav-button:hover,
+.nav-button.selected {
+    color: var(--selected);
+    font-weight: bold;
+}
+
+/* Page Title */
+.h1 {
+    font-size: 48px;
+    font-family: "SF Pro Display", sans-serif;
+    font-weight: bold;
     background-image: linear-gradient(to left, #0090f7, #ba62fc, #f2416b);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: auto;
-} 
-
-img {
-    width : 60% ;
-    border: 4px solid black ;
-    border-radius : 40% ; 
+    text-align: center;
+    margin: 20px 0;
 }
+
+/* Collaborator Section */
+.photo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    background: var(--background);
+}
+
+.photo div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: var(--radius);
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo div:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.photo img {
+    width: 80%;
+    max-width: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--subtitle);
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.photo img:hover {
+    border-color: var(--selected);
+}
+
+.photo h1 {
+    font-size: 24px;
+    font-family: "SF Pro Display", sans-serif;
+    font-weight: bold;
+    background-image: linear-gradient(to left, #0090f7, #ba62fc, #f2416b);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.photo p {
+    font-size: 16px;
+    color: var(--subtitle);
+}
+
+/* Footer (if needed) */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--background);
+    font-size: 14px;
+    color: var(--subtitle);
+}
+
+
+
+
