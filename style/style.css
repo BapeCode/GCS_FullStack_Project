@@ -1,11 +1,17 @@
 @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
 
+@property --angle {
+    syntax: "<angle>";
+    inital-value: 0deg;
+    inherits: false
+}
+
 :root {
     --text: #ffff;
     --text2: #1d1d1f;
     --background: #f5f5f7;
     --button: #0071e3;
-    --button-hovered: #0679eb;
+    --button-hovered: #489df1;
     --subtitle: #6e6e73;
     --radius: 10px;
     --selected: rgb(0, 118, 202)
@@ -14,11 +20,12 @@
 * {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     box-sizing: border-box;
+    cursor: none;
 }
 
 html, body {
+    cursor: none;
     scroll-behavior: smooth;
     width: 100%;
     height: 100%;
@@ -27,6 +34,19 @@ html, body {
     animation: 5s websiteopen;
     user-select: none;
     gap: 25px;
+}
+
+#custom-cursor {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    background-color: var(--text2);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1ms ease-out;
+    backdrop-filter: blur(10px);
+    opacity: 0.8;
 }
 
 
@@ -66,16 +86,29 @@ html, body {
             transition: all ease-in 0.2ms;
         }
 
+        .login {
+            background: var(--button);
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin: 8px;
+            color: var(--text);
+            transition: background-color ease-in 0.5s;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .login:hover {
+            background: var(--background);
+            color: var(--text);
+            border: 0.1px solid var(--button);
+        }
+
         a {
+            cursor: none;
             font-size: 17px;
             text-decoration: none;
             font-weight: 0;
             font-family: "SF Pro Display", sans-serif; 
-        }
-
-        a:hover {
-            cursor: pointer;
-            color: var(--selected);
         }
         
         .selected {
@@ -84,7 +117,6 @@ html, body {
         }
 
         .nav-button:hover {
-            cursor: pointer;
             color: var(--selected);
         }
     }
@@ -97,6 +129,7 @@ html, body {
         gap: 12px;
 
         a {
+            cursor: none;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -106,7 +139,6 @@ html, body {
         }
 
         a:hover {
-            cursor: pointer;
             color: var(--button-hovered);
         }
 
@@ -129,7 +161,14 @@ html, body {
     background: var(--background);
     gap: 15px;
 
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: homeScrollUp;
+
+
     a {
+        cursor: none;
         padding: 12px 24px;
         margin: 8px;
         border: none;
@@ -141,8 +180,7 @@ html, body {
     }
 
     a:hover {
-        cursor: pointer;
-        background-color: #0076ca;
+        background-color: var(--button-hovered);
         color: var(--text);
     }
 
@@ -176,6 +214,23 @@ html, body {
     }
 }
 
+.home h1, 
+.home p {
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: textFadeIn;
+}
+
+.home.scrolled {
+    animation-name: homeScrollDown;
+}
+
+.home.scrolled h1, 
+.home.scrolled p {
+    animation-name: textFadeOut;
+}
+
 /* About page */
 
 .about {
@@ -185,7 +240,11 @@ html, body {
     flex-direction: column;
     width: 100%;
     gap: 15px;
-    margin: 25px 0;
+
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: aboutScrollUp;
 
     .about-title-container {
         display: flex;
@@ -274,9 +333,12 @@ html, body {
 
         .container-items:hover {
             scale: 1.01;
-            cursor: pointer;
         }
     }
+}
+
+.about.scrolled {
+    animation-name: aboutScrollDown;
 }
 
 /* Collaborator page */
@@ -290,6 +352,11 @@ html, body {
     gap: 15px;
     padding: 25px 0;
     background: var(--background);
+
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: collaboratorScrollUp;
 
     .collaborator-title-container {
         display: flex;
@@ -332,11 +399,13 @@ html, body {
             flex-direction: column;
             background: linear-gradient(to top, #ffff, #f2f2f2);
             border-radius: 10px;
-            box-shadow: 0px 0px 10px -2px rgba(156,156,156,0.72);transition: scale 0.3s ease;
-            width: 80%;
+            transition: scale 0.3s ease;
+            width: 400px;
             margin: 12px;
             padding: 24px;
             gap: 5px;
+            box-shadow: 0 0 10px 0 #ccc;
+            text-align: center;
 
             img {
                
@@ -369,6 +438,7 @@ html, body {
             }
 
             a {
+                cursor: none;
                 padding: 12px 24px;
                 margin: 8px;
                 border: none;
@@ -380,17 +450,22 @@ html, body {
             }
         
             a:hover {
-                cursor: pointer;
-                background-color: #0076ca;
+                background-color: var(--button-hovered);
                 color: var(--text);
+                box-shadow: 10px 0px 15px 5px #000;
             }
         }
 
         .container-items:hover {
-            scale: 1.01;
-            cursor: pointer;
+            scale: 1.02;
         }
+        
     }
+    
+}
+
+.collaborator.scrolled {
+    animation-name: collaboratorScrollDown;
 }
 
 /* Footer Page */
@@ -433,6 +508,7 @@ html, body {
             gap: 12px;
     
             a {
+                cursor: none;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -442,7 +518,6 @@ html, body {
             }
     
             a:hover {
-                cursor: pointer;
                 color: var(--button-hovered);
             }
     
@@ -465,6 +540,7 @@ html, body {
             }
     
             a {
+                cursor: none;
                 font-family: "SF Pro Display", sans-serif;
                 text-align: center;
                 color: var(--subtitle);
@@ -472,7 +548,6 @@ html, body {
             }  
 
             a:hover {
-                cursor: pointer;
                 color: var(--button);
             }
         }
@@ -487,3 +562,92 @@ html, body {
         opacity: 1;
     }
 }
+
+@keyframes homeScrollDown {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.7) translateY(-20%);
+        opacity: 0.6;
+    }
+}
+
+@keyframes homeScrollUp {
+    0% {
+        transform: scale(0.7) translateY(-20%);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes aboutScrollDown {
+    0% {
+        transform: scale(1) translateX(-50%);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1) translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes aboutScrollUp {
+    0% {
+        transform: scale(1) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateX(-50%);
+        opacity: 0.6;
+    }
+}
+
+@keyframes collaboratorScrollDown {
+    0% {
+        transform: scale(0.2);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes collaboratorScrollUp {
+    0% {
+        transform: scale(1); 
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.2);
+        opacity: 0.6;
+    }
+}
+
+@keyframes textFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
