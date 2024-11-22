@@ -67,6 +67,23 @@ html, body {
         -webkit-text-fill-color: transparent;
     }
 
+    .login {
+        background: var(--button);
+        padding: 12px 24px;
+        border-radius: 50px;
+        margin: 8px;
+        color: var(--text);
+        transition: all ease-in 0.5s;
+        text-decoration: none;
+        font-size: 13px;
+    }
+
+    .login:hover {
+        background: var(--background);
+        color: var(--text);
+        border: 0.1px solid var(--button);
+    }
+
     nav {
         display: flex;
         align-items: center;
@@ -166,7 +183,10 @@ html, body {
     animation-fill-mode: forwards;
     animation-name: homeScrollUp;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3d36ab28cd99ee6f0e86fac176d51b16bd83a594
     a {
         cursor: none;
         padding: 12px 24px;
@@ -240,6 +260,11 @@ html, body {
     flex-direction: column;
     width: 100%;
     gap: 15px;
+
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: aboutScrollUp;
 
     animation-duration: 0.5s;
     animation-timing-function: ease-out;
@@ -485,6 +510,10 @@ html, body {
     animation-name: collaboratorScrollDown;
 }
 
+.collaborator.scrolled {
+    animation-name: collaboratorScrollDown;
+}
+
 /* Footer Page */
 
 .footer {
@@ -592,9 +621,12 @@ html, body {
         transform: scale(0.7) translateY(-20%);
         opacity: 0.6;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         overflow-x: hidden;
 >>>>>>> 61bc3ca404a9a581f5fd5a027e82809db29b4ca7
+=======
+>>>>>>> 3d36ab28cd99ee6f0e86fac176d51b16bd83a594
     }
 }
 
@@ -607,9 +639,12 @@ html, body {
         transform: scale(1) translateY(0);
         opacity: 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         overflow-x: auto;
 >>>>>>> 61bc3ca404a9a581f5fd5a027e82809db29b4ca7
+=======
+>>>>>>> 3d36ab28cd99ee6f0e86fac176d51b16bd83a594
     }
 }
 
