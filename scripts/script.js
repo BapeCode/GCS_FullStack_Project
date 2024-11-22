@@ -1,12 +1,15 @@
-// Animation de Scroll quand on appuie sur un href
+// Sélectionner tous les liens avec href commençant par "#"
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
-        e.preventDefault(); 
+        e.preventDefault(); // Empêche le comportement par défaut
+
+        // Cibler la section liée
         const target = document.querySelector(this.getAttribute("href"));
 
+        // Faire défiler jusqu'à la section avec animation
         target.scrollIntoView({
-            behavior: "smooth",
-            block: "start" 
+            behavior: "smooth", // Animation fluide
+            block: "start"      // Aligne le haut de la section au haut de la fenêtre
         });
     });
 });
@@ -59,16 +62,6 @@ document.addEventListener('mouseenter', () => {
     customCursor.style.transform = 'scale(1)';
 });
 
-// Fonction get Position
-function getPositionOfElement (a) {
-    var b = a.getBoundingClientRect();
-    return {
-      clientX: a.offsetLeft,
-      clientY: a.offsetTop,
-      viewportX: (b.x || b.left),
-      viewportY: (b.y || b.top)
-    }
-  }
 
 
 // Config of the collaborator and other in the futur
@@ -131,3 +124,4 @@ document.addEventListener("DOMContentLoaded", () => {
         collaborator_container.appendChild(container_items)
     })
 })
+
