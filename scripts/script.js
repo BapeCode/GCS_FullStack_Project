@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
 
-        console.log(scrollPosition)
         
         if (scrollPosition > 50) {
             homeSection.classList.add('scrolled');
@@ -59,6 +58,20 @@ document.addEventListener('mouseleave', () => {
 document.addEventListener('mouseenter', () => {
     customCursor.style.transform = 'scale(1)';
 });
+
+// Fonction get Position
+function getPositionOfElement (a) {
+    var b = a.getBoundingClientRect();
+    return {
+      clientX: a.offsetLeft,
+      clientY: a.offsetTop,
+      viewportX: (b.x || b.left),
+      viewportY: (b.y || b.top)
+    }
+  }
+
+
+// Config of the collaborator and other in the futur
 
 const config = {
     collaborator: [
