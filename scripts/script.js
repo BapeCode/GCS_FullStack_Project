@@ -20,11 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
-
-<<<<<<< HEAD
-        console.log(scrollPosition)
-=======
->>>>>>> 61bc3ca404a9a581f5fd5a027e82809db29b4ca7
         
         if (scrollPosition > 50) {
             homeSection.classList.add('scrolled');
@@ -63,13 +58,7 @@ document.addEventListener('mouseenter', () => {
     customCursor.style.transform = 'scale(1)';
 });
 
-<<<<<<< HEAD
-=======
 
-
-// Config of the collaborator and other in the futur
-
->>>>>>> 61bc3ca404a9a581f5fd5a027e82809db29b4ca7
 const config = {
     collaborator: [
         {
@@ -127,9 +116,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
         collaborator_container.appendChild(container_items)
     })
-<<<<<<< HEAD
 })
-=======
-})
-
->>>>>>> 61bc3ca404a9a581f5fd5a027e82809db29b4ca7
