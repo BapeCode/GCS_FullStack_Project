@@ -14,7 +14,6 @@
 * {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     box-sizing: border-box;
 }
 
@@ -45,6 +44,23 @@ html, body {
         background-image: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);        
         background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    .login {
+        background: var(--button);
+        padding: 12px 24px;
+        border-radius: 50px;
+        margin: 8px;
+        color: var(--text);
+        transition: all ease-in 0.5s;
+        text-decoration: none;
+        font-size: 13px;
+    }
+
+    .login:hover {
+        background: var(--background);
+        color: var(--text);
+        border: 0.1px solid var(--button);
     }
 
     nav {
@@ -129,6 +145,11 @@ html, body {
     background: var(--background);
     gap: 15px;
 
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: homeScrollUp;
+
     a {
         padding: 12px 24px;
         margin: 8px;
@@ -176,6 +197,23 @@ html, body {
     }
 }
 
+.home h1, 
+.home p {
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: textFadeIn;
+}
+
+.home.scrolled {
+    animation-name: homeScrollDown;
+}
+
+.home.scrolled h1, 
+.home.scrolled p {
+    animation-name: textFadeOut;
+}
+
 /* About page */
 
 .about {
@@ -186,6 +224,11 @@ html, body {
     width: 100%;
     gap: 15px;
     margin: 25px 0;
+
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: aboutScrollUp;
 
     .about-title-container {
         display: flex;
@@ -280,6 +323,10 @@ html, body {
     }
 }
 
+.about.scrolled {
+    animation-name: aboutScrollDown;
+}
+
 /* Collaborator page */
 
 .collaborator {
@@ -291,6 +338,11 @@ html, body {
     gap: 15px;
     padding: 25px 0;
     background: var(--background);
+
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-name: collaboratorScrollUp;
 
     .collaborator-title-container {
         display: flex;
@@ -399,6 +451,10 @@ html, body {
     }
 }
 
+.collaborator.scrolled {
+    animation-name: collaboratorScrollDown;
+}
+
 /* Footer Page */
 
 .footer {
@@ -505,7 +561,6 @@ html, body {
     100% {
         transform: scale(0.7) translateY(-20%);
         opacity: 0.6;
-        overflow-x: hidden;
     }
 }
 
@@ -517,7 +572,6 @@ html, body {
     100% {
         transform: scale(1) translateY(0);
         opacity: 1;
-        overflow-x: auto;
     }
 }
 
