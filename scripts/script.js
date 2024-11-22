@@ -1,15 +1,12 @@
-// Sélectionner tous les liens avec href commençant par "#"
+// Animation de Scroll quand on appuie sur un href
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
-        e.preventDefault(); // Empêche le comportement par défaut
-
-        // Cibler la section liée
+        e.preventDefault(); 
         const target = document.querySelector(this.getAttribute("href"));
 
-        // Faire défiler jusqu'à la section avec animation
         target.scrollIntoView({
-            behavior: "smooth", // Animation fluide
-            block: "start"      // Aligne le haut de la section au haut de la fenêtre
+            behavior: "smooth",
+            block: "start" 
         });
     });
 });
@@ -24,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
 
+<<<<<<< HEAD
+        console.log(scrollPosition)
+=======
+>>>>>>> 61bc3ca404a9a581f5fd5a027e82809db29b4ca7
         
         if (scrollPosition > 50) {
             homeSection.classList.add('scrolled');
@@ -62,10 +63,13 @@ document.addEventListener('mouseenter', () => {
     customCursor.style.transform = 'scale(1)';
 });
 
+<<<<<<< HEAD
+=======
 
 
 // Config of the collaborator and other in the futur
 
+>>>>>>> 61bc3ca404a9a581f5fd5a027e82809db29b4ca7
 const config = {
     collaborator: [
         {
@@ -123,5 +127,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         collaborator_container.appendChild(container_items)
     })
+<<<<<<< HEAD
+})
+=======
 })
 
+>>>>>>> 61bc3ca404a9a581f5fd5a027e82809db29b4ca7
