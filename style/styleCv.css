@@ -1,4 +1,6 @@
 /* Structure globale */
+
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -66,7 +68,6 @@ body {
   /* Sections */
   section {
     background: #ffffff;
-    border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
