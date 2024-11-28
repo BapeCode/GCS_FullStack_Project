@@ -18,46 +18,95 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutSection = document.querySelector('.about');
     const collaboratorSection = document.querySelector('.collaborator');
 
+    const thresholds = {}; // Stocke les seuils pour chaque section
+
+    const updateThresholds = () => {
+        thresholds.home = homeSection.offsetTop + 200; // Décalage relatif
+        thresholds.about = aboutSection.offsetTop - window.innerHeight / 2;
+        thresholds.collaborator = collaboratorSection.offsetTop - window.innerHeight / 3;
+    };
+
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
-        
-        if (scrollPosition > 50) {
+
+        // Appliquer ou retirer les classes en fonction des seuils
+        if (scrollPosition > thresholds.home) {
             homeSection.classList.add('scrolled');
         } else {
             homeSection.classList.remove('scrolled');
         }
 
-        if (scrollPosition > 250) {
-            aboutSection.classList.add('scrolled')
+        if (scrollPosition > thresholds.about) {
+            aboutSection.classList.add('scrolled');
         } else {
-            aboutSection.classList.remove('scrolled')
+            aboutSection.classList.remove('scrolled');
         }
 
-        if (scrollPosition > 1500) {
-            collaboratorSection.classList.add('scrolled')
+        if (scrollPosition > thresholds.collaborator) {
+            collaboratorSection.classList.add('scrolled');
         } else {
-            collaboratorSection.classList.remove('scrolled')
+            collaboratorSection.classList.remove('scrolled');
         }
     };
 
+    // Mettre à jour les seuils lors du chargement et du redimensionnement
+    window.addEventListener('resize', updateThresholds);
+    updateThresholds(); // Calcul initial
+
+    // Ajouter l'écouteur pour le défilement
     window.addEventListener('scroll', handleScroll);
 });
 
-// Animation cursor custom
-const customCursor = document.getElementById('custom-cursor');
 
-document.addEventListener('mousemove', (e) => {
-  customCursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
-});
+// Dark Mode / Light Mode
 
-document.addEventListener('mouseleave', () => {
-    customCursor.style.transform = 'scale(0)';
-});
-  
-document.addEventListener('mouseenter', () => {
-    customCursor.style.transform = 'scale(1)';
-});
+const ColorMode = document.getElementById('color-mode')
 
+ColorMode.addEventListener('click', () => {
+    const body = document.querySelector('body')
+
+    if (body.classList.contains('light-mode')) {
+        body.classList.add('dark-mode')
+        body.classList.remove('light-mode')
+    } else if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode')
+        body.classList.add('light-mode')
+    }
+})
+
+// Nav Bar Respensive
+
+const MobileNav = document.querySelector('#nav-phone')
+const NavLink = document.querySelector('.nav')
+
+MobileNav.addEventListener('click', (e) => {
+
+    NavLink.classList.toggle('mobile-nav')
+
+})
+
+// Search animation
+
+const CloseSearch = document.querySelector('#close-search')
+const Search = document.querySelector('#search')
+const SearchLink = document.querySelector('.search')
+const inputSearch = document.querySelector('#input-search')
+
+Search.addEventListener('click', () => {
+    SearchLink.style.display = "flex"
+    SearchLink.classList.toggle('search-container')
+})
+
+CloseSearch.addEventListener('click', () => {
+    SearchLink.classList.add('search-close')
+    setTimeout(() => {
+        SearchLink.classList.remove('search-container')
+        SearchLink.classList.remove('search-close')
+        SearchLink.style.display = "none"
+    }, 1500)
+})
+
+console.log(inputSearch.value)
 
 const config = {
     collaborator: [
@@ -65,25 +114,25 @@ const config = {
             name: "GERARD Maxime",
             subtitle: "First years at Guardia School Cybersecurity",
             image: 'maxime_little.png',
-            url: "CV/CV Maxime.html"
+            url: "#"
         },
         {
             name: "CHAUDHRY Taha",
             subtitle: "First years at Guardia School Cybersecurity",
             image: 'taha_little.png',
-            url: "CV/CV Taha.html"
+            url: "#"
         },
         {
             name: "BREHIN Eliott",
             subtitle: "First years at Guardia School Cybersecurity",
             image: 'eliott_little.png',
-            url: "CV/CV Eliott.html"
+            url: "#"
         },
         {
             name: "FOREST Mathieu",
             subtitle: "First years at Guardia School Cybersecurity",
             image: 'mathieu_little.png',
-            url: "CV/CV Mathieu.html"
+            url: "CV/mathieu.html"
         },
     ]
 }

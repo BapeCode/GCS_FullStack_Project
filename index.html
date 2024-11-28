@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guardian</title>
+    <title>CyberNova</title>
+    <link rel="stylesheet" href="style/animations.css">
+    <link rel="stylesheet" href="style/respensive.css">
     <link rel="stylesheet" href="style/style.css">
     <script src="https://kit.fontawesome.com/773700857c.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <div id="custom-cursor"></div>
+<body class="light-mode">
+  
+    <section class="header" id="header">
 
-    <section class="header">
+        <div class="logo">
+            <h1>Cybernova</h1>
+        </div>
 
-        <h1>Cybernova</h1>
-
-        <nav>
-
+        <div class="nav">
             <a class="nav-button selected" href="#home">
                 Home
             </a>
@@ -28,18 +30,26 @@
             <a class="nav-button" href="#collaborator">
                 Collaborator
             </a>
-            <a class="nav-button" href="Contact/Contact index.php">Contact us !</a>
 
-            <a class="nav-button login" href="SignUp.php">Sign In/Sign Out</a>
-            
-        </nav>
+            <a class="nav-button" href="back-end/contact.php">
+                Contact
+            </a>
 
-        <div class="socials">
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a id="dark-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
+            <a id="search"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+            <a id="color-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
         </div>
 
+        <div class="search">
+            <form method="POST" action="back-end/search.php" id="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input id="input-search" type="text" placeholder="Search Cybernova.net">
+            </form>
+            <div id="close-search"><i class="fa-solid fa-xmark"></i></div>
+        </div>
+
+        <a id="nav-phone" class="mobile"><i class="fa-solid fa-bars"></i></a>
+        
     </section>
 
     <section class="home" id="home">
@@ -155,7 +165,6 @@
                 <a href="#home" class="subtitle">Home</a>
                 <a href="#about" class="subtitle">About</a>
                 <a href="#collaborator" class="subtitle">Collaborator</a>
-                <a href="#" class="subtitle">Contact us ! </a>
             </div>
         </div>
     </footer>

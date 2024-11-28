@@ -1,6 +1,4 @@
 /* Structure globale */
-
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -39,9 +37,6 @@ body {
   h1 {
     margin: 0;
     font-size: 2rem;
-    background-image: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);        
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
   }
   
   p {
@@ -68,6 +63,7 @@ body {
   /* Sections */
   section {
     background: #ffffff;
+    border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
