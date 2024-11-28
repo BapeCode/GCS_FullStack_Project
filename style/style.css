@@ -149,6 +149,16 @@ body {
         background: var(--background-2);
         width: 100%;
         height: 100%;
+
+        form {
+            input {
+                background: var(--background);
+            }
+
+            i {
+                color: var(--text);
+            }
+        }
     }
 
     #close-search {
