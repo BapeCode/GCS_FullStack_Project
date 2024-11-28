@@ -27,10 +27,14 @@ if (isset($_POST['send'])) {
         // Set headers for HTML email
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+<<<<<<< HEAD
         $headers .= 'From: ' . $email . "\r\n";
         $headers .= 'Reply-To: ' . $email . "\r\n";  // Permet à la personne de répondre
         $headers .= 'X-Mailer: PHP/' . phpversion();
 
+=======
+        $headers .= 'From: <' . $email . '>' . "\r\n";
+>>>>>>> origin/Eliott
 
         // Send email
         $send = mail($to, $subject, $message, $headers);
