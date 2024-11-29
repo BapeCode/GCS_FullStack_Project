@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
     <title>Sign Up</title>
 </head>
 <body>
@@ -15,20 +15,19 @@
 
     <nav>
 
-        <a class="nav-button selected" href="#home">
+        <a class="nav-button selected" href="../index.html#home">
             Home
         </a>
 
-        <a class="nav-button" href="#about">
+        <a class="nav-button" href="../index.html#about">
             About
         </a>
 
-        <a class="nav-button" href="#collaborator">
+        <a class="nav-button" href="../index.html#collaborator">
             Collaborator
         </a>
-        <a class="nav-button" href="Contact/Contact index.php">Contact us !</a>
 
-        <a class="nav-button login" href="SignUp.php">Sign In/Sign Out</a>
+        
         
     </nav>
 
@@ -38,7 +37,7 @@
         <a id="dark-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
     </div>
 </link>
-<link rel="stylesheet" href="style/styleSignUp.css">
+<link rel="stylesheet" href="../style/styleSignUp.css">
 </section>
 <form method="POST" action="traitement.php"> 
     <label for="nom"> Votre nom </label>

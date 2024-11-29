@@ -59,15 +59,15 @@ if (mail($destinataire, $sujet, $message, $headers)) {
                 Home
             </a>
 
-            <a class="nav-button" href="index.html#about">
+            <a class="nav-button" href="../index.html#about">
                 About
             </a>
 
-            <a class="nav-button" href="index.html#collaborator">
+            <a class="nav-button" href="../index.html#collaborator">
                 Collaborator
             </a>
 
-            <a class="nav-button" href="contact.html">
+            <a class="nav-button" href="../indexcontact.html">
                 Contact
             </a>
 

@@ -48,6 +48,10 @@ if (isset($_POST['ok'])) {
         // Optionnel : récupérer la dernière entrée insérée (si nécessaire)
         $reponse = $bdd->lastInsertId();
         $messageSuccess = "L'utilisateur a été enregistré avec l'ID : " . $reponse;
+
+        // Rediriger l'utilisateur vers la page d'accueil après l'inscription réussie
+        header('Location:../index_signUp.html');  // Remplacez 'index.php' par le chemin correct de votre page d'accueil
+        exit();
     }
 }
 ?>
@@ -57,7 +61,7 @@ if (isset($_POST['ok'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
     <title>Inscription</title>
 </head>
 <body>
@@ -73,18 +77,18 @@ if (isset($_POST['ok'])) {
 
     <nav>
 
-        <a class="nav-button selected" href="#home">
+        <a class="nav-button selected" href="../index.html#home">
             Home
         </a>
 
-        <a class="nav-button" href="#about">
+        <a class="nav-button" href="../index.html#about">
             About
         </a>
 
-        <a class="nav-button" href="#collaborator">
+        <a class="nav-button" href="../index.html#collaborator">
             Collaborator
         </a>
-        <a class="nav-button" href="Contact/Contact index.php">Contact us !</a>
+        
 
         <a class="nav-button login" href="SignUp.php">Sign In/Sign Out</a>
         
@@ -96,7 +100,7 @@ if (isset($_POST['ok'])) {
         <a id="dark-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
     </div>
 </link>
-<link rel="stylesheet" href="style/styleSignUp.css">
+<link rel="stylesheet" href="../style/styleSignUp.css">
 </section>
 <form method="POST" action="traitement.php"> 
     <label for="nom"> Votre nom </label>
