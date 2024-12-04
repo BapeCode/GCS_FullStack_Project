@@ -10,35 +10,47 @@
 </head>
 <body>
   
-  <section class="header">
+  <section class="header" id="header">
 
-    <h1>Cybernova</h1>
+    <div class="logo">
+        <h1>Cybernova</h1>
+    </div>
 
-    <nav>
-
-        <a class="nav-button selected" href="../index.html">
+    <div class="nav">
+        <a class="nav-button selected" href="index.html">
             Home
         </a>
 
-        <a class="nav-button" href="../index.html#about">
+        <a class="nav-button" href="#about">
             About
         </a>
 
-        <a class="nav-button" href="../index.html#collaborator">
+        <a class="nav-button" href="#collaborator">
             Collaborator
         </a>
-        <a class="nav-button" href="#">Contact us !</a>
+        <a class="nav-button" href="back-end/SignUp.php"> 
+            SignUp
+        </a>
+        <a class="nav-button" href="back-end/SignIn.php"> 
+            SignIn
+        </a>
+        
 
-        <a class="nav-button login">Sign In/Sign Out</a>
-               
-    </nav>
+        <a id="search"><i class="fa-solid fa-magnifying-glass"></i></a>
 
-    <div class="socials">
-        <a href="https://github.com/BapeCode/Guardian"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAEuabCABIAQG9nuMkQhod92Ubqe59pBxG5o&keywords=mathieu%20forest&origin=RICH_QUERY_SUGGESTION&position=1&searchId=b193a64e-3582-4628-8110-3f81cbf79e08&sid=eYx&spellCorrectionEnabled=false"><i class="fa-brands fa-linkedin"></i></a>
-        <a id="dark-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
+        <a id="color-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
     </div>
 
+    <div class="search">
+        <form method="post" action="back-end/search.php" id="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="input-search" type="text" placeholder="Search Cybernova.net">
+        </form>
+        <div id="close-search"><i class="fa-solid fa-xmark"></i></div>
+    </div>
+
+    <a id="nav-phone" class="mobile"><i id="bars" class="fa-solid fa-bars"></i></a>
+    
 </section>
   <div class="resume">
     <header>
