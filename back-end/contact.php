@@ -1,35 +1,40 @@
 <?php
-$destinataire = "forest.mathieu69270@gmail.com";
-$sujet = "Support CyberNova";
 
-// Charger l'image de l'avatar
-$avatarPath = "../assets/flag_france.png";  // Chemin vers l'image sur le serveur
+require_once('config.php');
 
-// Lire l'image et l'encoder en base64
-$avatarData = base64_encode(file_get_contents($avatarPath));
+$messageDB = '';
 
-// Définir le type MIME pour l'image (par exemple, une image JPEG)
-$avatarMimeType = "image/jpeg"; // ou "image/png" pour une image PNG
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    if (isset($_POST['fullname']) && isset($_POST['email']) && isset($_POST['message'])) {
+        if (!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['message'])) {
+            // Nettoyer les données pour prévenir les injections SQL
+            $fullname = $mysqli->real_escape_string($_POST['fullname']);
+            $email = $mysqli->real_escape_string($_POST['email']);
+            $message = $mysqli->real_escape_string($_POST['message']);
 
-// Générer l'HTML pour l'email
-$message = "<html><body>";
-$message .= "<h1>Bonjour Maxime</h1>";
-$message .= "<p>Merci de nous avoir contacté. Nous ferons de notre mieux pour vous répondre dans les plus brefs délais tout en réglant votre problème technique.</p>";
+            $select = "SELECT * FROM contact WHERE full_name = '$fullname'";
+            $selectResult = $mysqli->query($select);
+            if ($selectResult->num_rows > 0) {
+                $messageDB = "<p>You've only been contact the support</p>";
+            } else {
+                $query = "INSERT INTO contact (full_name, email, message) VALUES ('$fullname', '$email', '$message')";
 
-// Ajouter l'avatar encodé en base64
-$message .= "<img src='data:$avatarMimeType;base64,$avatarData' alt='Avatar' style='width:100px;height:100px;border-radius:50%;'>";
-
-$message .= "</body></html>";
-
-$headers = "From: contact@support-cybernova.fr\r\n";
-$headers .= "Reply-To: contact@support-cybernova.fr\r\n";
-$headers .= "Content-Type: text/html; charset=\"utf-8\"\r\n";
-
-if (mail($destinataire, $sujet, $message, $headers)) {
-    echo "L'email a été envoyé !";
-} else {
-    echo "Une erreur est survenue !";
+                // Exécution de la requête
+                if ($mysqli->query($query)) {
+                    $messageDB = "<p>Send successfully!</p>";
+                } else {
+                    $messageDB = "<p>Send not successfully! Error: 404 MYSQL </p>";
+                }
+            }
+        } else {
+            $messageDB = "<p>All fields are required!</p>";
+        }
+    } else {
+        $messageDB = "<p>All fields are required!</p>";
+    }
 }
+
+
 ?>
 
 
@@ -48,81 +53,90 @@ if (mail($destinataire, $sujet, $message, $headers)) {
 
 <body class="light-mode">
 
-    <section class="header" id="header">
+    <nav>
+        <a class="logo">
+            <span>CyberNova</span>
+        </a>
 
-        <div class="logo">
-            <h1>Cybernova</h1>
-        </div>
+        <div class="main-navlinks">
+            <button class="humburger" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-        <div class="nav">
-            <a class="nav-button selected" href="index.html">
-                Home
-            </a>
+            <div class="navlinks-container">
+                <a href="../index.html" aria-current="page">Home</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#collaborator">Collaborator</a>
+                <a href="contact.php">Contact</a>
 
-            <a class="nav-button" href="../index.html#about">
-                About
-            </a>
+                <a id="color-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
 
-            <a class="nav-button" href="../index.html#collaborator">
-                Collaborator
-            </a>
-
-            <a class="nav-button" href="../indexcontact.html">
-                Contact
-            </a>
-
-            <a id="search"><i class="fa-solid fa-magnifying-glass"></i></a>
-
-            <a id="color-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
-        </div>
-
-        <div class="search">
-            <form method="post" action="back-end/search.php" id="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input id="input-search" type="text" placeholder="Search Cybernova.net">
-            </form>
-            <div id="close-search"><i class="fa-solid fa-xmark"></i></div>
-        </div>
-
-        <a id="nav-phone" class="mobile"><i id="bars" class="fa-solid fa-bars"></i></a>
-
-    </section>
-
-    <section class="contact" id="contact">
-        <h1>Contact us</h1>
-        <div class="contact-container">
-            <div class="input-container">
-                <form action="" method="POST" id="contact">
-                    <legend>Contact Form</legend>
-
-                    <label for="fullname">Full Name</label>
-                    <input type="text" id="fullname" placeholder="Joe Max" name="fullname" required>
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Email" name="email" required>
-
-                    <label for="message">Message :</label>
-                    <textarea id="message" style="height: 100px;" name="message" placeholder="Message" required></textarea>
-
-                    <button type="submit">Send this message</button>
-                </form>
-
-            </div>
-            <div class="details-container">
-                <span>email@guardia.fr</span>
-                <span>+33 06.00.00.00.36</span>
-                <h6>Cybernova</h6>
-                <span>10 Rue Gilbert dru</span>
-                <span>Lyon, 69007</span>
-                <span>France</span>
-                <div class="children">
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <div class="search-container">
+                    <label for="search-input">
+                        <i id="search" class="fa-solid fa-magnifying-glass"></i>
+                    </label>
+                    <div class="search-input">
+                        <input id="search-input" type="text" placeholder="Search in Cybernova">
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
 
+    <?php
+    if ($mysqli) {
+    ?>
+        <section class="contact" id="contact">
+            <h1>Contact us</h1>
+            <div class="contact-container">
+                <div class="input-container">
+                    <form action="" method="POST" id="contact">
+                        <legend>Contact Form 📞</legend>
+
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" placeholder="Joe Max" name="fullname" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Email" name="email" required>
+
+                        <label for="message">Message :</label>
+                        <textarea id="message" style="height: 100px;" name="message" placeholder="Message" required></textarea>
+
+                        <?php
+                        echo $messageDB
+                        ?>
+
+                        <button type="submit">Send this message</button>
+                    </form>
+
+                </div>
+                <div class="details-container">
+                    <span>email@guardia.fr</span>
+                    <span>+33 06.00.00.00.36</span>
+                    <h6>Cybernova</h6>
+                    <span>10 Rue Gilbert dru</span>
+                    <span>Lyon, 69007</span>
+                    <span>France</span>
+                    <div class="children">
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <?php
+    } else {
+    ?>
+
+        <section class="contact" id="contact">
+            <h1>An Error has been producted. Contact the support of the website. Error Code : 404 No SQL Connection</h1>
+        </section>
+
+    <?php
+    }
+    ?>
 </body>
 
 <script type="text/javascript" src="../scripts/addons.js"></script>
