@@ -36,19 +36,19 @@ const config = {
             name: "GERARD Maxime",
             subtitle: "First years at Guardia School Cybersecurity",
             image: 'maxime_little.png',
-            url: "#"
+            url: "CV/CV Maxime.html"
         },
         {
             name: "CHAUDHRY Taha",
             subtitle: "First years at Guardia School Cybersecurity",
             image: 'taha_little.png',
-            url: "#"
+            url: "CV/CV Taha.html"
         },
         {
             name: "BREHIN Eliott",
             subtitle: "First years at Guardia School Cybersecurity",
             image: 'eliott_little.png',
-            url: "#"
+            url: "CV/Eliott_CV.html"
         },
         {
             name: "FOREST Mathieu",
