@@ -2,23 +2,31 @@
 
 if (isset($_POST['search'])) {
     if (!empty($_POST['search'])) {
+        // Récupérer la valeur de la recherche
         $search = $_POST['search'];
-        $search = $mysqli->real_escape_string($_POST['search']);
 
-        $query = "SELECT * FROM articles WHERE title LIKE '%$search%' OR content LIKE '%$search%'";
-        $result = $mysqli->query($query);
-
-        if ($result->num_rows > 0) {
-            // Affiche les résultats
-            while ($row = $result->fetch_assoc()) {
-                echo "Titre : " . htmlspecialchars($row['title']) . "<br>";
-                echo "Contenu : " . htmlspecialchars($row['content']) . "<br><br>";
-            }
+        // Vérifier si la recherche contient des caractères interdits
+        if (preg_match('/[^a-zA-Z0-9\s]/', $search)) {
+            // Si des caractères interdits sont trouvés
+            echo "Des caractères non autorisés ont été détectés. Veuillez entrer uniquement des lettres, chiffres et espaces.";
         } else {
-            echo "Aucun résultat trouvé pour votre recherche.";
+            // Si les caractères sont valides, on nettoie et on continue
+            $search = $mysqli->real_escape_string($search);
+
+            $query = "SELECT * FROM articles WHERE title LIKE '%$search%' OR content LIKE '%$search%'";
+            $result = $mysqli->query($query);
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "Titre : " . htmlspecialchars($row['title']) . "<br>";
+                    echo "Contenu : " . htmlspecialchars($row['content']) . "<br><br>";
+                }
+            } else {
+                echo "Aucun résultat trouvé pour votre recherche.";
+            }
         }
     } else {
-        echo "Veuillez mettre une texte";
+        echo "Veuillez entrer un texte.";
     }
 }
 ?>
