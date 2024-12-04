@@ -1,17 +1,5 @@
 <?php
 
-$host = "localhost";
-$dbname = "cybernova";
-$username = "root";
-$password = "root";
-
-$mysqli = @new mysqli(
-    $host,
-    $username,
-    $password,
-    $dbname
-);
-
 if (isset($_POST['search'])) {
     if (!empty($_POST['search'])) {
         // Récupérer la valeur de la recherche

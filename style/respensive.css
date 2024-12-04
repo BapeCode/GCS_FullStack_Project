@@ -130,3 +130,10 @@
         width: 100% !important;
     }
 }
+
+@media screen and (max-width: 550px) {
+    .contact .contact-container {
+        width: 250px;
+        height: 400px;
+    }
+}
