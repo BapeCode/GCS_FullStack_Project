@@ -10,64 +10,45 @@
     <script src="https://kit.fontawesome.com/773700857c.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="light-mode">
-  
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guardian</title>
-    <link rel="stylesheet" href="style/animations.css">
-    <link rel="stylesheet" href="style/respensive.css">
-    <link rel="stylesheet" href="style/style.css">
-    <script src="https://kit.fontawesome.com/773700857c.js" crossorigin="anonymous"></script>
-</head>
+<body>
+    <nav>
+        <a class="logo">
+            <span>CyberNova</span>
+        </a>
 
-<body class="light-mode">
-  
-    <section class="header" id="header">
+        <div class="main-navlinks">
+            <button class="humburger" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-        <div class="logo">
-            <h1>Cybernova</h1>
+            <div class="navlinks-container">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="#about">About</a>
+                <a href="#collaborator">Collaborator</a>
+                <a href="back-end/contact.php">Contact</a>
+
+                <a id="color-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
+
+                <div class="search-container">
+                    <label for="search-input">
+                        <i id="search" class="fa-solid fa-magnifying-glass"></i>
+                    </label>
+                    <div class="search-input">
+                        <input id="search-input" type="text" placeholder="Search in Cybernova">
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="nav">
-            <a class="nav-button selected" href="index.html">
-                Home
-            </a>
-
-            <a class="nav-button" href="#about">
-                About
-            </a>
-
-            <a class="nav-button" href="#collaborator">
-                Collaborator
-            </a>
-            <a class="nav-button" href="back-end/SignUp.php"> 
-                SignUp
-            </a>
-            <a class="nav-button" href="back-end/SignIn.php"> 
-                SignIn
-            </a>
-            
-
-            <a id="search"><i class="fa-solid fa-magnifying-glass"></i></a>
-
-            <a id="color-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
+        <div class="nav-buttons">
+            <a id="user"><i class="fa-solid fa-user"></i></a>
+            <div class="sign-btns">
+                <a href="back-end/login.php">Login</a>
+            </div>
         </div>
-
-        <div class="search">
-            <form method="post" action="back-end/search.php" id="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input id="input-search" type="text" placeholder="Search Cybernova.net">
-            </form>
-            <div id="close-search"><i class="fa-solid fa-xmark"></i></div>
-        </div>
-
-        <a id="nav-phone" class="mobile"><i id="bars" class="fa-solid fa-bars"></i></a>
-        
-    </section>
+    </nav>
 
     <section class="home" id="home">
 
@@ -75,13 +56,13 @@
             <img src="assets/logo.png" alt="CyberFolioLogo" draggable="false">
             <h1>CyberFolio of Cybernova</h1>
             <p>"Illuminating the Future of Technology and Security"</p>
-            <a href="#">About this project</a>
+            <a href="#about">About this project</a>
         </div>
         <div class="home-right">
             <img src="assets/globe.png" alt="globe" draggable="false">
             <h1>Works of the cybersecurity</h1>
             <p>Explore the digital showcase of our team’s creativity, innovation, and collaboration.</p>
-            <a href="#">Collaborator</a>
+            <a href="#collaborator">Collaborator</a>
         </div>
     </section>
 
@@ -166,8 +147,8 @@
             
     
             <div class="socials">
-                <a href="https://github.com/BapeCode/Guardian"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAEuabCABIAQG9nuMkQhod92Ubqe59pBxG5o&keywords=mathieu%20forest&origin=RICH_QUERY_SUGGESTION&position=1&searchId=b193a64e-3582-4628-8110-3f81cbf79e08&sid=eYx&spellCorrectionEnabled=false"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
 
@@ -189,4 +170,5 @@
 
 
 <script type="text/javascript" src="scripts/script.js"></script>
+<script type="text/javascript" src="scripts/addons.js"></script>
 </html>
