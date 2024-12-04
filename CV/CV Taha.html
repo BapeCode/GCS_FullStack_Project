@@ -65,10 +65,35 @@
       <!-- Colonne gauche : Experience et Education -->
       <div class="left-column">
         <section class="Qui ?">
-          <h2>Qui suis je ?</h2>
-          <p>...</p>
-          <p>...</p>
-      </section>
+          <h2 class="m-more-less-content" style="display: flex; align-items: center; justify-content: space-between;">
+            <span>Learn more about me</span> <!-- Ajout d'un span autour du texte -->
+            <button id="toggle-btn" style="border: 1px solid black; background: none; font-size: 10px; ">
+              <img src="image_flèche.png" width="10%">
+            </button> 
+          </h2>
+          
+          <p class="more-text"></p>
+          <p class="less-text" style="display:none;">
+            texte à introduire
+          </p>
+        
+          <script>
+            document.getElementById("toggle-btn").addEventListener("click", function() {
+              var moreText = document.querySelector(".more-text");
+              var lessText = document.querySelector(".less-text");
+              
+              if (lessText.style.display === "none") {
+                lessText.style.display = "block";
+                moreText.style.display = "none";
+                this.innerHTML = '<img src="image_flèche_vers_haut.png" width="10%">';
+              } else {
+                lessText.style.display = "none";
+                moreText.style.display = "block";
+                this.innerHTML = '<img src="image_flèche.png" width="10%">';
+              }
+            });
+          </script>
+        </section>
         <section class="experience">
           <h2>Experience</h2>
           <div class="job">
