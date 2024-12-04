@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style/style.css">
-  <link rel="stylesheet" href="../style/styleCv.css">
   <title>GERARD Maxime - Student in Cybersecurity</title>
   
 </head>
@@ -38,7 +37,8 @@
         <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAFSjLYMBEnzFe48ADG2sucqHpp0ltECn42A&keywords=maxime%20gerard&origin=RICH_QUERY_SUGGESTION&position=0&searchId=0e813d14-de71-47c0-b24e-684f383f8d99&sid=KRC&spellCorrectionEnabled=false"><i class="fa-brands fa-linkedin"></i></a>
         <a id="dark-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
     </div>
-
+  </link>
+<link rel="stylesheet" href="../style/styleCv.css">
 </section>
   <div class="resume">
     <header>
@@ -54,12 +54,41 @@
     <!-- Main Content -->
     <main>
       <!-- Colonne gauche : Experience et Education -->
+      
       <div class="left-column">
         <section class="Qui ?">
-          <h2>Qui suis je ?</h2>
-          <p>Je m'appele Maxime habitant à Lyon 7ème j'étudie aujourd'hui a guardiaschool en 1ère année pour approfondir mes connaissances. Je souhaite faire de cette branche mon métier professionel.</p>
-          <p>Pour y arriver le travail est la clé, c'est pour ça que je crée un cv sur ce site pour potentiellement trouver un stage ou une alternance. Si vous êtes intéréssé contacter moi aux réseaux ci joint.</p>
-      </section>
+          <h2 class="m-more-less-content" style="display: flex; align-items: center; justify-content: space-between;">
+            <span>Learn more about me</span> <!-- Ajout d'un span autour du texte -->
+            <button id="toggle-btn" style="border: 1px solid black; background: none; font-size: 10px; ">
+              <img src="image_flèche.png" width="10%">
+            </button> 
+          </h2>
+          
+          <p class="more-text"></p>
+          <p class="less-text" style="display:none;">
+            Je m'appele Maxime habitant à Lyon 7ème j'étudie aujourd'hui a guardiaschool en 1ère année pour approfondir mes connaissances. Je souhaite faire de cette branche mon métier professionel.
+            Pour y arriver le travail est la clé, c'est pour ça que je crée un cv sur ce site pour potentiellement trouver un stage ou une alternance. Si vous êtes intéréssé contacter moi aux réseaux ci joint.
+          </p>
+        
+          <script>
+            document.getElementById("toggle-btn").addEventListener("click", function() {
+              var moreText = document.querySelector(".more-text");
+              var lessText = document.querySelector(".less-text");
+              
+              if (lessText.style.display === "none") {
+                lessText.style.display = "block";
+                moreText.style.display = "none";
+                this.innerHTML = '<img src="image_flèche_vers_haut.png" width="10%">';
+              } else {
+                lessText.style.display = "none";
+                moreText.style.display = "block";
+                this.innerHTML = '<img src="image_flèche.png" width="10%">';
+              }
+            });
+          </script>
+        </section>
+      
+      
         <section class="experience">
           <h2>Experience</h2>
           <div class="job">

@@ -132,7 +132,7 @@ const config = {
             name: "FOREST Mathieu",
             subtitle: "First years at Guardia School Cybersecurity",
             image: 'mathieu_little.png',
-            url: "CV/mathieu.html"
+            url: "CV/CV mathieu.html"
         },
     ]
 }
