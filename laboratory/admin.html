@@ -11,51 +11,265 @@
     <script src="https://kit.fontawesome.com/773700857c.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="light-mode">
+<body class="light-mode" style="overflow: hidden;">
 
-    <nav>
-        <a class="logo">
-            <span>CyberNova</span>
-        </a>
-
-        <div class="main-navlinks">
+    <div class="admin-global">
+        <div class="admin-nav">
+            <h1>CyberNova Administration</h1>
+    
+            <div class="admin-navlinks">
+                <a href="../index.html"><i class="fa-solid fa-arrow-rotate-left"></i>Return in the site</a>
+                <a id="contact"><i class="fa-regular fa-address-book"></i>Contact</a>
+                <a id="security" class="active"><i class="fa-solid fa-shield-halved"></i>Sécurité</a>
+            </div>
+    
+            <div class="admin-buttons">
+                <a id="color-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
+                <a href="../back-end/logout.php"></a><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+        </div>
+    
+        <div class="admin-container">
             <button class="humburger" type="button">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            <div>
+                <label for="admin-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+                <input id="admin-search" placeholder="Search">
+            </div>
 
-            <div class="navlinks-container">
-                <a href="../index.html" aria-current="page">Home</a>
-                <a href="../index.html#about">About</a>
-                <a href="../index.html#collaborator">Collaborator</a>
-                <a href="contact.php">Contact</a>
+            <div class="info-user">
+                <i class="fa-solid fa-user"></i>
+                <p>admin@cybernova.fr</p>
+            </div>
+        </div>
 
-                <a id="color-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
 
-                <div class="search-container">
-                    <label for="search-input">
-                        <i id="search" class="fa-solid fa-magnifying-glass"></i>
-                    </label>
-                    <div class="search-input">
-                        <input id="search-input" type="text" placeholder="Search in Cybernova">
+        <div class="module-reply"></div>
+
+        <main class="admin-content-contact">
+            <h1>Contact results</h1>
+            <div class="admin-info">
+                <p>Name</p>
+                <p>Email</p>
+                <p>Message</p>
+                <p>Action</p>
+            </div>
+
+            <div class="admin-results" id="1">
+                <p id="fullname">Mathieu FOREST</p>
+                <p id="email">mforest@cybernova.fr</p>
+                <p id="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odit excepturi perferendis, ad eius incidunt nulla recusandae, ipsa voluptatum sint voluptatem officia quidem tenetur. Impedit.</p>
+                <div class="actions">
+                    <a id="trash-admin"><i class="fa-solid fa-trash-can"></i></a>
+                    <a id="reply-admin"><i class="fa-solid fa-reply"></i></a>
+                </div>
+            </div>
+
+            <div class="admin-results" id="1">
+                <p id="fullname">Eliott</p>
+                <p id="email">eliott@cybernova.fr</p>
+                <p id="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odit excepturi perferendis, ad eius incidunt nulla recusandae, ipsa voluptatum sint voluptatem officia quidem tenetur. Impedit.</p>
+                <div class="actions">
+                    <a id="trash-admin"><i class="fa-solid fa-trash-can"></i></a>
+                    <a id="reply-admin"><i class="fa-solid fa-reply"></i></a>
+                </div>
+            </div>
+
+            <div class="admin-results" id="1">
+                <p id="fullname">Taha</p>
+                <p id="email">taha@cybernova.fr</p>
+                <p id="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odit excepturi perferendis, ad eius incidunt nulla recusandae, ipsa voluptatum sint voluptatem officia quidem tenetur. Impedit.</p>
+                <div class="actions">
+                    <a id="trash-admin"><i class="fa-solid fa-trash-can"></i></a>
+                    <a id="reply-admin"><i class="fa-solid fa-reply"></i></a>
+                </div>
+            </div>
+
+            <div class="admin-results" id="1">
+                <p id="fullname">Maxime</p>
+                <p id="email">maxime@cybernova.fr</p>
+                <p id="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odit excepturi perferendis, ad eius incidunt nulla recusandae, ipsa voluptatum sint voluptatem officia quidem tenetur. Impedit.</p>
+                <div class="actions">
+                    <a id="trash-admin"><i class="fa-solid fa-trash-can"></i></a>
+                    <a id="reply-admin"><i class="fa-solid fa-reply"></i></a>
+                </div>
+            </div>
+
+            <div class="admin-results" id="1">
+                <p id="fullname">Ninon</p>
+                <p id="email">ninon@cybernova.fr</p>
+                <p id="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odit excepturi perferendis, ad eius incidunt nulla recusandae, ipsa voluptatum sint voluptatem officia quidem tenetur. Impedit.</p>
+                <div class="actions">
+                    <a id="trash-admin"><i class="fa-solid fa-trash-can"></i></a>
+                    <a id="reply-admin"><i class="fa-solid fa-reply"></i></a>
+                </div>
+            </div>
+
+            <div class="admin-results" id="1">
+                <p id="fullname">Alizée</p>
+                <p id="email">alizee@cybernova.fr</p>
+                <p id="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odit excepturi perferendis, ad eius incidunt nulla recusandae, ipsa voluptatum sint voluptatem officia quidem tenetur. Impedit.</p>
+                <div class="actions">
+                    <a id="trash-admin"><i class="fa-solid fa-trash-can"></i></a>
+                    <a id="reply-admin"><i class="fa-solid fa-reply"></i></a>
+                </div>
+            </div>
+         
+        </main>
+
+        <main class="admin-content-security">
+            <div class="admin-grid">
+                <h1>Security</h1>
+
+                <div class="security-items">
+
+                    <div class="manager-user">
+                        <form action="" method="post">
+                            <div class="add-user-items">
+                                <label for="email-your"><i class="fa-regular fa-envelope"></i></label>
+                                <input id="email-your" type="email" placeholder="E.g cybernova@example.com">
+                            </div>
+
+                            <div class="add-user-items">
+                                <label for="old-password-user"><i class="fa-solid fa-lock"></i></label>
+                                <input id="old-password-user" type="password" placeholder="Old password">
+                            </div>
+
+                            <div class="add-user-items">
+                                <label for="password-your"><i class="fa-solid fa-lock"></i></label>
+                                <input id="password-your" type="password" placeholder="Password">
+                            </div>
+
+                            <a class="update-password">Update password</a>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="admin-grid">
+                <h1>Manage</h1>
 
-        <div class="nav-buttons">
-            <a id="user"><i class="fa-solid fa-user"></i></a>
-            <div class="sign-btns">
-                <a href="logout.php">Logout</a>
+                <div class="manager-items">
+                    <div class="admin-infos">
+                        <p>Email</p>
+                        <p>Password</p>
+                    </div>
+
+                    <div class="users-items">
+                        <p id="fullname">
+
+                            admin@cybernova.org
+
+                        </p>
+                        <p id="email">
+                            21232f297a57a5a743894a0e4a801fc3
+                                
+
+                        </p>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </nav>
-
+        </main>
+    </div>
     
 
 </body>
 
 <script type="text/javascript" src="../scripts/addons.js"></script>
+
+<script>
+
+    const buttonContact = document.querySelector('#contact');
+    const buttonSecurity = document.querySelector('#security');
+    const contactContainer = document.querySelector('.admin-content-contact');
+    const securityContainer = document.querySelector('.admin-content-security')
+
+    // Fonction pour mettre à jour les classes
+    const updateClasses = () => {
+        if (buttonContact.classList.contains('active')) {
+            contactContainer.classList.add('active');
+        } else {
+            contactContainer.classList.remove('active');
+        }
+        if (buttonSecurity.classList.contains('active')) {
+            securityContainer.classList.add('active')
+        } else {
+            securityContainer.classList.remove('active')
+        }
+    };
+
+    // Vérifie l'état au chargement de la page
+    document.addEventListener('DOMContentLoaded', updateClasses);
+
+    // Ajoute des événements pour gérer les boutons
+    buttonContact.addEventListener('click', () => {
+        buttonContact.classList.add('active');
+        buttonSecurity.classList.remove('active');
+        updateClasses(); // Met à jour les classes
+    });
+
+    buttonSecurity.addEventListener('click', () => {
+        buttonSecurity.classList.add('active');
+        buttonContact.classList.remove('active');
+        updateClasses(); // Met à jour les classes
+    });
+
+
+
+    // Action in contact
+    
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('#trash-admin')) {
+            const content = e.target.closest('.admin-results');
+            if (content) {
+                content.remove()
+            }
+        }
+    })
+
+    document.addEventListener('click', (e) => {
+        const modulReply = document.querySelector('.module-reply');
+        if (e.target.closest('#reply-admin') && modulReply.style.display !== 'flex') {
+            modulReply.classList.add('active')
+            
+            const parentContent = e.target.closest('.admin-results');
+            const childrenContent = parentContent.children;
+
+            const email = childrenContent[1].textContent;
+
+            modulReply.innerHTML = `
+                <div class="header">
+                    <h3>Nouveau message</h3>
+                    <a id="close-module"><i class="fa-solid fa-xmark"></i></a>
+                </div>
+                <div class="objects">
+                    <div class="objects-items">
+                        <p>À ${email}</p>
+                    </div>
+                    <div class="objects-items">
+                        <input type="text" placeholder="Object">
+                    </div>
+                </div>
+
+                <textarea rows="5" cols="33" type="text"  name="reply" id="reply"></textarea>
+
+                <button data-email='${email}''>Send this email</button>
+            `
+            
+
+
+            const closeModule = document.querySelector('#close-module');
+            closeModule.addEventListener('click', (e) => {
+                modulReply.classList.remove('active')
+            })
+        }
+    })
+
+</script>
 
 </html>

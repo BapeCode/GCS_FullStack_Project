@@ -1,5 +1,17 @@
 // Dark Mode / Light Mode
 
+setAppearance()
+
+function setAppearance() {
+    const defaultMode = window.matchMedia('(prefers-color-scheme: dark)');
+
+    if (defaultMode.matches) {
+        document.body.classList.add('dark-mode')
+    } else {
+        document.body.classList.add('light-mode')
+    }
+}
+
 const ColorMode = document.getElementById('color-mode')
 
 ColorMode.addEventListener('click', () => {
@@ -15,12 +27,14 @@ ColorMode.addEventListener('click', () => {
 })
 
 
+// Get Current Page
 
-// Search Click
 
 const input = document.querySelector('#search-input')
 const Search = document.querySelector('#search')
 const searchInput = document.querySelector('.search-input')
+
+// Search Click
 
 Search.addEventListener('click', () => {
     if (searchInput.classList.contains('open')) {
@@ -39,24 +53,7 @@ Search.addEventListener('click', () => {
 const hamburger = document.querySelector('.humburger')
 const navLinks = document.querySelector('.navlinks-container')
 
-const user = document.querySelector('#user')
-const signbtns = document.querySelector('.sign-btns')
-
-// Humburger Click
-
 hamburger.addEventListener('click', () => {
-    if (signbtns.classList.contains('open')) {
-        signbtns.classList.toggle('open')
-    }
     hamburger.classList.toggle('open')
     navLinks.classList.toggle('open')
-})
-
-// Sign Click
-
-user.addEventListener('click', () => {
-    if (navLinks.classList.contains('open')) {
-        navLinks.classList.toggle('open')
-    }
-    signbtns.classList.toggle('open')
 })

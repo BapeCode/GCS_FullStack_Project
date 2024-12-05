@@ -71,25 +71,27 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
             <div class="navlinks-container">
                 <a href="../index.html" aria-current="page">Home</a>
-                <a href="../index.html#about">About</a>
-                <a href="../index.html#collaborator">Collaborator</a>
+                <a href="../index.htm#about">About</a>
+                <a href="../index.htm#collaborator">Collaborator</a>
                 <a href="contact.php">Contact</a>
 
                 <a id="color-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
 
                 <div class="search-container">
-                    <label for="search-input">
-                        <i id="search" class="fa-solid fa-magnifying-glass"></i>
-                    </label>
-                    <div class="search-input">
-                        <input id="search-input" type="text" placeholder="Search in Cybernova">
-                    </div>
+                    <form action="search.php" method="GET">
+                        <label for="search-input">
+                            <i id="search" class="fa-solid fa-magnifying-glass"></i>
+                        </label>
+                        <div class="search-input">
+                            <input id="search-input" type="text" name="search" placeholder="Search in Cybernova">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
 
         <div class="nav-buttons">
-            <a id="user"><i class="fa-solid fa-user"></i></a>
+            <a id="user" href="back-end/login.php"><i class="fa-solid fa-right-to-bracket"></i></a>
             <div class="sign-btns">
                 <a href="login.php">Login</a>
             </div>
@@ -105,13 +107,19 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 <label for="email">
                     Email
                 </label>
-                <input name="email" id="email" type="email" placeholder="E.g joe.marc@example.com">
-                <label id="password">Password</label>
-                <input name="password" id="password" type="password" placeholder="Enter your password">
+                <input name="email" id="email" type="email" placeholder="E.g joe.marc@example.com" autocomplete="off">
+                <label for="password">Password</label>
+                <input name="password" id="password" type="password" placeholder="Enter your password" autocomplete="off">
 
+                <div class="show_password">
+                    <input type="checkbox" onclick="showPassword()">
+                    <p>Show password</p>
+
+                </div>
                 <?php
                 echo $messageDB;
                 ?>
+
 
                 <button type="submit">Login</button>
             </form>
@@ -120,5 +128,17 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 </body>
 
 <script type="text/javascript" src="../scripts/addons.js"></script>
+
+<script>
+    function showPassword() {
+        var x = document.getElementById("password");
+        console.log(x.type)
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 
 </html>

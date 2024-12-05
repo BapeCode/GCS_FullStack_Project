@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style/respensive.css">
     <link rel="stylesheet" href="style/style.css">
     <script src="https://kit.fontawesome.com/773700857c.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,18 +33,20 @@
                 <a id="color-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
 
                 <div class="search-container">
-                    <label for="search-input">
-                        <i id="search" class="fa-solid fa-magnifying-glass"></i>
-                    </label>
-                    <div class="search-input">
-                        <input id="search-input" type="text" placeholder="Search in Cybernova">
-                    </div>
+                    <form action="back-end/search.php" method="GET">
+                        <label for="search-input">
+                            <i id="search" class="fa-solid fa-magnifying-glass"></i>
+                        </label>
+                        <div class="search-input">
+                            <input id="search-input" type="text" name="search" placeholder="Search in Cybernova">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
 
         <div class="nav-buttons">
-            <a id="user"><i class="fa-solid fa-user"></i></a>
+            <a id="user" href="back-end/login.php"><i class="fa-solid fa-right-to-bracket"></i></a>
             <div class="sign-btns">
                 <a href="back-end/login.php">Login</a>
             </div>
@@ -56,17 +59,17 @@
             <img src="assets/logo.png" alt="CyberFolioLogo" draggable="false">
             <h1>CyberFolio of Cybernova</h1>
             <p>"Illuminating the Future of Technology and Security"</p>
-            <a href="#about">About this project</a>
+            <a href="#">About this project</a>
         </div>
         <div class="home-right">
             <img src="assets/globe.png" alt="globe" draggable="false">
             <h1>Works of the cybersecurity</h1>
             <p>Explore the digital showcase of our team’s creativity, innovation, and collaboration.</p>
-            <a href="#collaborator">Collaborator</a>
+            <a href="#">Collaborator</a>
         </div>
     </section>
 
-    <section class="about" id="about">
+    <section data-aos="fade-up" class="about" id="about">
         <div class="about-title-container">
             <h1 class="about-title">About this compagny.</h1> <h1 class="about-subtitle">The perfection !</h1>
         </div>
@@ -128,7 +131,7 @@
 
     </section>
 
-    <section class="collaborator" id="collaborator">
+    <section data-aos="fade-left" class="collaborator" id="collaborator">
         <div class="collaborator-title-container">
             <h1 class="collaborator-title">Collaborator of this project.</h1>
             <h1 class="collaborator-subtitle">The best !</h1>
@@ -140,7 +143,7 @@
         </div>
     </section>
     
-    <footer class="footer">
+    <footer data-aos="fade-right" class="footer">
         <div class="footer-container" >
             <h1>Cybernova</h1>
 
@@ -171,4 +174,8 @@
 
 <script type="text/javascript" src="scripts/script.js"></script>
 <script type="text/javascript" src="scripts/addons.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 </html>

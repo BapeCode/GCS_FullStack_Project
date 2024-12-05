@@ -13,22 +13,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Mode par default
 
-setAppearance()
-
-function setAppearance() {
-    const defaultMode = window.matchMedia('(prefers-color-scheme: dark)');
-
-    if (defaultMode.matches) {
-        document.body.classList.add('dark-mode')
-        console.log('dark-mode');
-        
-    } else {
-        document.body.classList.add('light-mode')
-        console.log('light-mode');
-
-    }
-}
-
 
 const config = {
     collaborator: [
@@ -36,25 +20,25 @@ const config = {
             name: "GERARD Maxime",
             subtitle: "First years at Guardia School Cybersecurity",
             image: 'maxime_little.png',
-            url: "CV/CV Maxime.html"
+            url: "CV/maxime.html"
         },
         {
             name: "CHAUDHRY Taha",
             subtitle: "First years at Guardia School Cybersecurity",
             image: 'taha_little.png',
-            url: "CV/CV Taha.html"
+            url: "back-end/cv.php?name=taha"
         },
         {
             name: "BREHIN Eliott",
             subtitle: "First years at Guardia School Cybersecurity",
             image: 'eliott_little.png',
-            url: "CV/Eliott_CV.html"
+            url: "CV/eliott.html"
         },
         {
             name: "FOREST Mathieu",
             subtitle: "First years at Guardia School Cybersecurity",
             image: 'mathieu_little.png',
-            url: "CV/CV mathieu.html"
+            url: "back-end/cv.php?name=mathieu"
         },
     ]
 }

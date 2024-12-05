@@ -1,0 +1,341 @@
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+
+html {
+    --background: #eeeeee;
+    --background-2: #ffffff;
+    --text: #000;
+    --subtitle: #979797;
+    --button: #0088cc;
+    --hovered: #298ff5;
+    --shadow: #9c9c9cb8;
+    --shadown-2: white;
+    --linear: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
+  }
+  
+  .light-mode {
+    --background: #eeeeee;
+    --background-2: #ffffff;
+    --text: #000;
+    --text-2: #ffff;
+    --subtitle: #979797;
+    --button: #0088cc;
+    --hovered: #298ff5;
+    --shadow: #9c9c9cb8;
+    --shadow-2: white;
+    --box: linear-gradient(to top, #ffff, #f2f2f2);
+    --title-box: linear-gradient(to top, #444444, #666666);
+  
+    background: var(--background-2);
+  }
+  
+.dark-mode {
+    --background: #212124;
+    --background-2: #161618;
+    --text: #ffff;
+    --subtitle: #818181;
+    --button: #0088cc;
+    --hovered: #298ff5;
+    --shadow: #000000b8;
+    --shadow-2: black;
+    --box: linear-gradient(to top, #444444, #666666);
+    --title-box: linear-gradient(to top, #ffff, #f2f2f2);
+  
+    background: var(--background-2);
+  }
+  
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: "SF Pro Display", sans-serif;
+    animation: 3s websiteopen;
+    user-select: none;
+}
+  
+
+/* Admin */
+
+.admin-global {
+    display: grid;
+    grid-template-columns: 200px 1fr; 
+    grid-template-rows: 50px 1fr;
+    height: 100vh;
+  
+}
+
+.admin-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background: var(--background);
+    border-right: 1px solid #c5c5c6;
+    padding: 15px;
+}
+
+.admin-nav h1 {
+    font-size: 24px;
+    font-weight: 500;
+    background-image: var(--linear);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.admin-navlinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.admin-navlinks a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    color: var(--text);
+    transition: color 0.3s ease-out;
+    cursor: pointer;
+}
+
+.admin-navlinks a.active {
+    background: var(--background-2);
+    color: var(--button);
+}
+
+.admin-navlinks a:hover {
+    color: var(--button);
+}
+
+.admin-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding: 15px;
+    gap: 15px;
+    font-size: 20px;
+    color: var(--text);
+}
+
+/* Top bar admin */
+
+.admin-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+    border-bottom: 1px solid #c5c5c6;
+    padding: 15px;
+    gap: 10px;
+}
+
+.admin-container input {
+    background: var(--background);
+    border: none;
+    outline: none;
+    width: 50%;
+    color: var(--text);
+}
+
+.admin-container label {
+    color: var(--text);
+}
+
+.admin-container .info-user {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.admin-container .info-user i {
+    background: var(--background);
+    border: 1px solid #c5c5c6;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Main Content */
+
+.admin-content-contact {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2;
+    grid-row: 2;
+    padding: 20px;
+    background-color: var(--background-2);
+    position: relative;
+
+    overflow: auto;
+    transition: display 0.5s ease-out;
+}
+
+.admin-content-contact h1 {
+    color: var(--text);
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.admin-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid #c5c5c6;
+    margin-bottom: 10px;
+}
+
+.admin-info p {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.admin-results {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 15px 0;
+    background: var(--background-2);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.admin-results .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: var(--text);
+}
+
+.admin-results p {
+    pointer-events: none;
+    color: var(--text);
+}
+
+.admin-results p:nth-child(1) {
+    margin-left: 10px;
+}
+
+.admin-results:nth-child(odd) {
+    background: #abc4e744;
+}
+
+.module-reply {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99;
+    box-shadow: 0 0 5px #333;
+    border-radius: 10px 10px 0 0;
+    background: var(--background-2);
+    gap: 10px;
+    padding-bottom: 5px;
+    transition: transform 0.4s ease-out;
+    transform: translateY(105%);
+
+    &.active {
+        transform: translateY(0%);
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid #c5c5c6;
+        border-radius: 10px 10px 0 0;
+        background: var(--background);
+        padding: 10px;
+        z-index: 99;
+    
+        h3 {
+            font-size: 15px;
+            color: var(--text);
+            font-weight: 400;
+        }
+
+        i {
+            cursor: pointer;
+            color: var(--text);
+        }
+    }
+
+    .objects {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 10px;
+        background: var(--background-2);
+        gap: 10px;
+    
+        .objects-items {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #c5c5c6;
+
+            p {
+                color: var(--text);
+            }
+        }
+    
+    
+        input {
+            outline: none;
+            border: none;
+            padding: 10px 0;
+            color: var(--text);
+            background: var(--background-2);
+        }
+    }
+
+    textarea {
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        font-family: "SF Pro Display", sans-serif;
+        font-size: 13px;
+        max-height: 650px;
+        max-width: 100%;
+        background: var(--background-2);
+        color: var(--text);
+    }
+
+    button {
+        padding: 12px;
+        border-radius: 10px;
+        background: var(--button);
+        border: none;
+        color: var(--text-2)
+    }
+}
+
+

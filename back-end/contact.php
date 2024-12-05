@@ -74,13 +74,22 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 <a id="color-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
 
                 <div class="search-container">
-                    <label for="search-input">
-                        <i id="search" class="fa-solid fa-magnifying-glass"></i>
-                    </label>
-                    <div class="search-input">
-                        <input id="search-input" type="text" placeholder="Search in Cybernova">
-                    </div>
+                    <form action="search.php" method="GET">
+                        <label for="search-input">
+                            <i id="search" class="fa-solid fa-magnifying-glass"></i>
+                        </label>
+                        <div class="search-input">
+                            <input id="search-input" type="text" name="search" placeholder="Search in Cybernova">
+                        </div>
+                    </form>
                 </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a id="user" href="back-end/login.php"><i class="fa-solid fa-right-to-bracket"></i></a>
+            <div class="sign-btns">
+                <a href="login.php">Login</a>
             </div>
         </div>
     </nav>
