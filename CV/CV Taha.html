@@ -16,87 +16,103 @@
     </a>
 
     <div class="main-navlinks">
-        <button class="humburger" type="button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+      <button class="humburger" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
 
-        <div class="navlinks-container">
-            <a href="../index.html" aria-current="page">Home</a>
-            <a href="../index.html#about">About</a>
-            <a href="../index.html#collaborator">Collaborator</a>
-            <a href="../back-end/contact.php">Contact</a>
+      <div class="navlinks-container">
+          <a href="../index.html" aria-current="page">Home</a>
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#collaborator">Collaborator</a>
+          <a href="../back-end/contact.php">Contact</a>
 
-            <a id="color-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
+          <a id="color-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
 
-            
-        </div>
-    </div>
-  </nav>
-  
-  <section class="header">
+          
+      </div>
+  </div>
+</nav>
 
-    <div class="socials">
-        <a href="https://github.com/BapeCode/Guardian"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAEuabCABIAQG9nuMkQhod92Ubqe59pBxG5o&keywords=mathieu%20forest&origin=RICH_QUERY_SUGGESTION&position=1&searchId=b193a64e-3582-4628-8110-3f81cbf79e08&sid=eYx&spellCorrectionEnabled=false"><i class="fa-brands fa-linkedin"></i></a>
-        <a id="dark-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
-    </div>
+<section class="header"></section>
+
+  <div class="socials">
+      <a href="https://github.com/BapeCode/Guardian"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAEuabCABIAQG9nuMkQhod92Ubqe59pBxG5o&keywords=mathieu%20forest&origin=RICH_QUERY_SUGGESTION&position=1&searchId=b193a64e-3582-4628-8110-3f81cbf79e08&sid=eYx&spellCorrectionEnabled=false"><i class="fa-brands fa-linkedin"></i></a>
+      <a id="dark-mode"><i class="fa-solid fa-circle-half-stroke"></i></a>
+  </div>
 
 </section>
-  <div class="resume">
-    <header>
-      <div class="profile">
-        <img src="../assets/collaborator/taha.jpg" alt="Chaudhry Taha " class="profile-pic">
-        <div>
-          <h1>Chaudhry Taha</h1>
-          <p>Student in Cybersecurity</p>
-        </div>
+<div class="resume">
+  <header>
+    <div class="profile">
+      <img src="../assets/collaborator/taha.jpg" alt="Chaudhry Taha " class="profile-pic">
+      <div>
+        <h1>Chaudhry Taha</h1>
+        <p>Student in Cybersecurity</p>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <main>
-      <!-- Colonne gauche : Experience et Education -->
-      <div class="left-column">
-        <section class="Qui ?">
-          <h2 class="m-more-less-content" style="display: flex; align-items: center; justify-content: space-between;">
-            <span>Learn more about me</span> <!-- Ajout d'un span autour du texte -->
-            <button id="toggle-btn" style="border: 1px solid black; background: none; font-size: 10px; ">
-              <img src="image_flèche.png" width="10%">
-            </button> 
-          </h2>
-          
-          <p class="more-text"></p>
-          <p class="less-text" style="display:none;">
-            texte à introduire
-          </p>
+  <!-- Main Content -->
+  <main>
+    <!-- Colonne gauche : Experience et Education -->
+    <div class="left-column">
+      <section class="Qui ?">
+        <h2 class="m-more-less-content" style="display: flex; align-items: center; justify-content: space-between;">
+          <span>Learn more about me</span> <!-- Ajout d'un span autour du texte -->
+          <button id="toggle-btn" style="border: 1px solid black; background: none; font-size: 10px; ">
+            <img src="image_flèche.png" width="10%">
+          </button> 
+        </h2>
         
-          <script>
-            document.getElementById("toggle-btn").addEventListener("click", function() {
-              var moreText = document.querySelector(".more-text");
-              var lessText = document.querySelector(".less-text");
-              
-              if (lessText.style.display === "none") {
-                lessText.style.display = "block";
-                moreText.style.display = "none";
-                this.innerHTML = '<img src="image_flèche_vers_haut.png" width="10%">';
-              } else {
-                lessText.style.display = "none";
-                moreText.style.display = "block";
-                this.innerHTML = '<img src="image_flèche.png" width="10%">';
-              }
-            });
-          </script>
-        </section>
+        <p class="more-text"></p>
+        <p class="less-text" style="display:none;">
+          texte à introduire
+        </p>
+      
+        <script>
+          document.getElementById("toggle-btn").addEventListener("click", function() {
+            var moreText = document.querySelector(".more-text");
+            var lessText = document.querySelector(".less-text");
+            
+            if (lessText.style.display === "none") {
+              lessText.style.display = "block";
+              moreText.style.display = "none";
+              this.innerHTML = '<img src="image_flèche_vers_haut.png" width="10%">';
+            } else {
+              lessText.style.display = "none";
+              moreText.style.display = "block";
+              this.innerHTML = '<img src="image_flèche.png" width="10%">';
+            }
+          });
+        </script>
+      </section>
         <section class="experience">
           <h2>Experience</h2>
           <div class="job">
-            <h3>Pharmacie</h3>
-            <p>Employé en pharmacie: mai - juin 2021</p>
+            <h3>Restaurant Tajmahal</h3>
+            <p>Commis de salle - gestion informatique</p>
             <ul>
-              <li>Business to Custommers</li>
-              <li>Restockage de la réserve</li>
+              <li>Gestion du site web</li>
+              <li>Création d'un système d'encaissement de secours</li>
+              <li>Gestion de la vente en ligne</li>
+            </ul>
+            <h3>Restaurant Punjab</h3>
+            <p>Commis de salle</p>
+            <ul>
+              <li>Acceuil des clients</li>
+              <li>Mise a jour fichier client</li>
+              <li>Prise des commandes et service</li>
+              <h3>Restaurant Tajmahal</h3>
+            </ul>
+            <h3>Ets MPS</h3>
+            <p>Assistant commercial</p>
+            <ul>
+              <li>Mise a jour fichier client</li>
+              <li>Renouvellement Books de réalisation chantier</li>
+              <li>Gestion des stocks</li>
             </ul>
           </div>
         </section>
@@ -115,16 +131,17 @@
         <section class="languages">
           <h2>Languages</h2>
           <ul>
-            <li>English <span class="bar"><span style="width: 65%"></span></span></li>
+            <li>English <span class="bar"><span style="width: 67%"></span></span></li>
             <li>Francais <span class="bar"><span style="width: 100%"></span></span></li>
+            <li>Urdu <span class="bar"><span style="width: 100%"></span></span></li>
           </ul>
         </section>
         <section class="tools">
           <h2>Tools</h2>
           <ul>
-            <li>Python</li>
+            <li>Python / C++</li>
             <li>HTML / CSS / SQL</li>
-            <li>AI: ChatGPT</li>
+            <li>Pack Office</li>
           </ul>
         </section>
         <section class="interests">
